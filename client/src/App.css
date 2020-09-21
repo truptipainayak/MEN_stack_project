@@ -1,0 +1,19 @@
+.app {
+    padding: 10px;
+}
+
+ .jumbotron {
+    text-align: center;
+}
+
+ .card {
+    display: inline-flex;
+    width: 50%;
+    padding: 10px;
+    border: 0;
+}
+ .card-header {
+    color: white;
+    background-color: #ffb3b3;
+    font-weight: bold;
+}
