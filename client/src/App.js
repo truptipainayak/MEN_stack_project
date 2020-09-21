@@ -12,7 +12,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    const url = "http://localhost:5000/api/postsapi";
+    const url = "https://infinite-crag-08638.herokuapp.com//api/postsapi";
     fetch(url)
     .then(response => response.json())
     .then(json => this.setState({ posts: json }))
