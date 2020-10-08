@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container, Button, ListGroupItem, ListGroup } from 'reactstrap';
+import { Container, Button, Toast, ToastBody, ToastHeader } from 'reactstrap';
 import { connect } from 'react-redux';
 import { getItems, deleteItem } from '../actions/itemActions';
 import PropTypes from 'prop-types';
@@ -25,15 +25,14 @@ this.props.deleteItem(_id)
         console.log(items);
         return(
             <Container>
-            <ListGroup>
+                <div className="my-2 rounded card-holder">
             {items.map(({ _id, title, description }) => (
-            <ListGroupItem key={_id}>
-                {title}
-                {description}
-            <Button color="danger" size="sm" onClick = {this.onClickDelete.bind(this,_id)}>&times;</Button>
-            </ListGroupItem>
-            ))}
-            </ListGroup>
+                <Toast key={_id}>  
+                <ToastHeader>{title} <Button color="danger" size="sm" onClick = {this.onClickDelete.bind(this,_id)}>&times;</Button></ToastHeader>
+                <ToastBody>{description}</ToastBody>
+            </Toast>
+             ))}
+             </div>
             </Container>
         );
     }

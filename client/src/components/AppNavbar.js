@@ -4,35 +4,20 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
-  NavbarText
+  NavLink
 } from 'reactstrap';
 
-
-
 class AppNavbar extends Component {
-
-    // state = {
-    //     isOpen = false
-    // }
-
-    // toggle = () => {
-    //      this.setState({
-    //         isOpen : !this.state.isOpen
-    //      }) 
-    // }
-
     render(){
         return (
         <div>
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">Sticky Blog Posts</NavbarBrand>
+        <NavbarBrand href="/">Sticky Notes</NavbarBrand>
           <Nav className="mr-auto" navbar>
             <NavItem>
-              <NavLink href="/">GitHub</NavLink>
             </NavItem>
           </Nav>
-          <NavbarText>Join the club</NavbarText>
+          <NavLink href="https://github.com/truptipainayak/TodoList.git">GitHub</NavLink>
       </Navbar>
     </div>
     );
