@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-const posts = require("./routes/api/postsapi");
+const items = require("./routes/api/postsapi");
 var cors = require("cors");
 
 const app = express();
@@ -26,7 +26,8 @@ mongoose
   .catch(err => console.log(err));
 
 // use routes
-app.use("/api/postsapi", posts);
+app.use("/api/postsapi", items);
+
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
@@ -35,13 +36,7 @@ if (process.env.NODE_ENV === 'production') {
   app.get('*', (request, response) => {
 	response.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
 });
-
 }
-
-// app.get('*', (request, response) => {
-// 	response.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-// });
-
 
 const port = process.env.PORT || 5000;
 

@@ -1,9 +1,32 @@
 import React, { Component } from 'react';
 import './App.css';
+import { Container } from 'reactstrap';
+import AppNavbar from './components/AppNavbar';
+import ShoppingList from './components/ShoppingList';
+import  ItemModal from './components/ItemModal';
+import { Provider } from 'react-redux';
+import store from './store';
+
 
 class App extends Component {
+  render() {
+     return (
+       <Provider store={store}>
+        <div>
+        <Container>
+          <AppNavbar />
+          <ItemModal />
+          <ShoppingList />
+          <Blog/>
+         </Container>
+        </div>
+        </Provider>
+     );
+  }
+}
 
-  //set a local state, where we are going to save our data from API.
+class Blog extends React.Component {
+//set a local state, where we are going to save our data from API.
   constructor(props) {
     super(props);
     this.state = {
@@ -21,7 +44,7 @@ class App extends Component {
 
   render() {
     const { posts } = this.state;
-    console.log(posts);
+    // console.log(posts);
     return (
       <div className="container">
         <div className="jumbotron">
@@ -41,4 +64,5 @@ class App extends Component {
     );
   }
 }
+
 export default App;

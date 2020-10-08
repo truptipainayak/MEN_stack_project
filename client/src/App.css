@@ -17,3 +17,18 @@
     background-color: #ffb3b3;
     font-weight: bold;
 }
+
+.btn-dark{
+margin-bottom: 1rem;
+margin-top: 1rem;
+}
+
+.btn-danger{
+    justify-content: end;
+    float: left;
+    margin-right: 1rem;
+}
+
+ShoppingList{
+    margin: 20px;
+}
