@@ -44,7 +44,7 @@ onSubmit = e =>{
 
     render(){
         return(
-            <div><div class="btn-holder"><Button color= 'dark' onClick={this.toggl}>+ Add a sticky note</Button></div>
+            <div><div className="btn-holder"><Button color= 'dark' onClick={this.toggl}>+ Add a sticky note</Button></div>
             <Modal isOpen={this.state.modal} toggle = {this.toggl}>
                 <ModalHeader toggle = {this.toggl}> Add a new sticky note</ModalHeader>
                 <ModalBody>
